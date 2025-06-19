@@ -2,42 +2,48 @@
 
 This is a Django + DRF + PostgreSQL backend for a healthcare management system.
 
+# Objective
+
+To develop a secure and scalable RESTful API backend for a healthcare system, enabling the management of patients, doctors, and their relationships using Django, DRF, PostgreSQL, and JWT.
+
 ## Features
 - JWT Authentication
 - Patient and Doctor CRUD APIs
 - Patient-Doctor Assignment
 - PostgreSQL Integration
 
-## Setup Instructions
+# Key Features Implemented
+Authentication System
+User Registration (/api/auth/register/)
 
-1. Clone the repo:
-```bash
-git clone https://github.com/YOUR_USERNAME/healthcare-backend.git
-cd healthcare-backend
-```
+JWT Login (/api/auth/login/)
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+Secure token-based access to all other APIs.
 
-3. Configure environment:
-Create `.env`:
-```
-DB_NAME=healthcare_db
-DB_USER=postgres
-DB_PASSWORD=yourpassword
-DB_HOST=localhost
-DB_PORT=5432
-```
+# Patient Management
+Authenticated users can:
 
-4. Run migrations:
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
+Create patients
 
-5. Start server:
-```bash
-python manage.py runserver
-```
+View only their own patients
+
+Update or delete patient records
+# Doctor Management
+Any authenticated user can:
+
+Add, view, edit, delete doctors
+
+View full doctor list (not user-specific)
+
+# Patient-Doctor Mapping
+Patients can be assigned to multiple doctors
+
+Endpoints to:
+
+Map doctor to patient
+
+List all mappings
+
+Get mappings for a specific patient
+
+Remove a mapping
